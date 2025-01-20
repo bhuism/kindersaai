@@ -13,7 +13,7 @@ env:
 jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
-    runs-on: buildjet-4vcpu-ubuntu-2204-arm
+    runs-on: ubuntu-24.04-arm
     environment: production
 
     steps:
