@@ -39,7 +39,6 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ github.repository }}
 
       - name: Build and push
-        id: build-and-push
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -48,7 +47,7 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{ github.repository }}:latest
 
   rollout-restart:
-    needs: build-and-push
+    needs: build
     runs-on: ubuntu-latest
     name: Rollout Restart
     steps:
